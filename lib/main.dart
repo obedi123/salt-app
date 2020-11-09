@@ -24,7 +24,8 @@ class SaltAppHome extends StatefulWidget {
   _SaltAppHomeState createState() => _SaltAppHomeState();
 }
 
-class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStateMixin {
+class _SaltAppHomeState extends State<SaltAppHome>
+    with SingleTickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -37,8 +38,8 @@ class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStat
   String driverId;
   String driverName;
   int machineId = 0;
-  File uploadLicense; //variable for choosed file
-  File uploadPlate; //variable for choosed file
+  File uploadLicense;
+  File uploadPlate;
   String licenseBaseImage;
   String plateBaseImage;
   final picker = ImagePicker();
@@ -254,7 +255,8 @@ class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStat
   }
 
   Future<void> chooseLicense() async {
-    var choosedimage = await picker.getImage(source: ImageSource.camera, maxHeight: 480, maxWidth: 640);
+    var choosedimage = await picker.getImage(
+        source: ImageSource.camera, maxHeight: 480, maxWidth: 640);
     //set source: ImageSource.camera to get image from camera
     setState(() {
       uploadLicense = File(choosedimage.path);
@@ -262,7 +264,8 @@ class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStat
   }
 
   Future<void> choosePlate() async {
-    var choosedimage = await picker.getImage(source: ImageSource.camera, maxHeight: 480, maxWidth: 640);
+    var choosedimage = await picker.getImage(
+        source: ImageSource.camera, maxHeight: 480, maxWidth: 640);
     //set source: ImageSource.camera to get image from camera
     setState(() {
       uploadPlate = File(choosedimage.path);
@@ -409,8 +412,9 @@ class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStat
                               alignment: Alignment.center,
                               transform: Matrix4.rotationY(pi),
                               child: Icon(Icons.sync,
-                                  color:
-                                      pending == true ? Colors.red : Colors.green,
+                                  color: pending == true
+                                      ? Colors.red
+                                      : Colors.green,
                                   size: 30),
                             ),
                           ),
@@ -524,13 +528,13 @@ class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStat
                           ),
                           SizedBox(height: 20),
                           if (uploadLicense != null)
-                          Container(
-                                      //else show image here
-                                      child: SizedBox(
-                                          height: 150,
-                                          child: Image.file(
-                                              uploadLicense) //load image from file
-                                          )),
+                            Container(
+                                //else show image here
+                                child: SizedBox(
+                                    height: 150,
+                                    child: Image.file(
+                                        uploadLicense) //load image from file
+                                    )),
                           uploadLicense == null
                               ? SizedBox(height: 60)
                               : SizedBox(height: 20),
@@ -577,13 +581,13 @@ class _SaltAppHomeState extends State<SaltAppHome> with SingleTickerProviderStat
                           ),
                           SizedBox(height: 20),
                           if (uploadPlate != null)
-                          Container(
-                                      //else show image here
-                                      child: SizedBox(
-                                          height: 150,
-                                          child: Image.file(
-                                              uploadPlate) //load image from file
-                                          )),
+                            Container(
+                                //else show image here
+                                child: SizedBox(
+                                    height: 150,
+                                    child: Image.file(
+                                        uploadPlate) //load image from file
+                                    )),
                           SizedBox(height: 20)
                         ],
                       ),
