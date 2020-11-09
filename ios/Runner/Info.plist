@@ -27,7 +27,11 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
+<<<<<<< HEAD
   <string>Camera permission is required for barcode scanning.</string>
+=======
+	<string>Camera permission is required for barcode scanning.</string>
+>>>>>>> 8901b7586400cdffbbd0c1878e703f2f744e7d9e
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
