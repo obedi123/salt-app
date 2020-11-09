@@ -38,8 +38,8 @@ class _SaltAppHomeState extends State<SaltAppHome>
   String driverId;
   String driverName;
   int machineId = 0;
-  File uploadLicense;
-  File uploadPlate;
+  File uploadLicense; //variable for choosed file
+  File uploadPlate; //variable for choosed file
   String licenseBaseImage;
   String plateBaseImage;
   final picker = ImagePicker();
