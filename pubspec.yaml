@@ -23,7 +23,7 @@ environment:
 dependencies:
   http:
   image_picker:
-  barcode_scan:
+  barcode_scan: ^3.0.1
   shared_preferences:
   sqflite:
   path_provider:
